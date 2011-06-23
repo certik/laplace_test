@@ -19,8 +19,8 @@ real(dp), intent(in) :: dx2, dy2
 integer :: nx, ny, i, j
 nx = size(u, 1)
 ny = size(u, 2)
-do i = 2, nx-1
-    do j = 2, ny-1
+do j = 2, ny-1
+    do i = 2, nx-1
         u(i, j) = ((u(i+1, j) + u(i-1, j)) * dy2 + &
                    (u(i, j+1) + u(i, j-1)) * dx2) / (2*(dx2+dy2))
     end do
@@ -47,7 +47,7 @@ u(1,:) = 1
 dx2 = dx**2
 dy2 = dy**2
 do i = 1, Niter
-    call for_update2(u, dx2, dy2)
+    call for_update1(u, dx2, dy2)
 end do
 end function
 
