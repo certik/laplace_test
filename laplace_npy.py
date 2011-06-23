@@ -23,3 +23,4 @@ if __name__ == "__main__":
     u = calc(100, 8000)
     t = clock() - t
     print t
+    print u[1, 1]

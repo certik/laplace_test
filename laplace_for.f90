@@ -2,13 +2,13 @@ program laplace_for
 implicit none
 integer, parameter :: dp=kind(0.d0)
 
-integer, parameter :: N = 5
-real(dp) :: u(N, N)
-integer :: i
-u = calc(N, 100, 0.1_dp, 0.1_dp)
-do i = 1, N
-    print *, u(i, :)
-end do
+integer, parameter :: N = 100
+real(dp) :: u(N, N), t1, t2
+call cpu_time(t1)
+u = calc(N, 8000, 0.1_dp, 0.1_dp)
+call cpu_time(t2)
+print *, t2-t1
+print *, u(2, 2)
 contains
 
 subroutine for_update(u, dx2, dy2)
