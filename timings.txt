@@ -1,0 +1,11 @@
+Timings on Aspire 1830T, Intel Core i7:
+
+Method         Time    Relative Speed
+
+NumPy          2.03    1
+Cython         1.25    0.61
+Fortran loop   0.47    0.23
+Fortran array  0.19    0.09
+
+Using gfortran 4.5.2 in Ubuntu Natty and the following optimizations:
+-O3 -march=native -ffast-math -funroll-loops
