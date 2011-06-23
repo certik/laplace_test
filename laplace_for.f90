@@ -47,7 +47,7 @@ u(1,:) = 1
 dx2 = dx**2
 dy2 = dy**2
 do i = 1, Niter
-    call for_update1(u, dx2, dy2)
+    call for_update2(u, dx2, dy2)
 end do
 end function
 
