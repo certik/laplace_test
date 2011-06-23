@@ -16,3 +16,7 @@ def calc(N, Niter=100, func=num_update, args=()):
     for i in range(Niter):
         func(u,*args)
     return u
+
+if __name__ == "__main__":
+    u = calc(5, 100)
+    print u

@@ -2,10 +2,13 @@ program laplace_for
 implicit none
 integer, parameter :: dp=kind(0.d0)
 
-integer, parameter :: N = 10
+integer, parameter :: N = 5
 real(dp) :: u(N, N)
+integer :: i
 u = calc(N, 100, 0.1_dp, 0.1_dp)
-print *, u
+do i = 1, N
+    print *, u(i, :)
+end do
 contains
 
 subroutine for_update(u, dx2, dy2)
