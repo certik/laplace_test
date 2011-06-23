@@ -24,3 +24,5 @@ if __name__ == "__main__":
     t = clock() - t
     print t
     print u[1, 1]
+    print sum(u.flat)
+    print sum((u**2).flat)

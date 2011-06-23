@@ -9,6 +9,8 @@ u = calc(N, 8000, 0.1_dp, 0.1_dp)
 call cpu_time(t2)
 print *, t2-t1
 print *, u(2, 2)
+print *, sum(u)
+print *, sum(u**2)
 contains
 
 subroutine for_update(u, dx2, dy2)
