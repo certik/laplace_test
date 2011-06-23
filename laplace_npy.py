@@ -1,5 +1,6 @@
 from numpy import zeros
 from scipy import weave
+from timeit import default_timer as clock
 
 dx = 0.1
 dy = 0.1
@@ -18,5 +19,7 @@ def calc(N, Niter=100, func=num_update, args=()):
     return u
 
 if __name__ == "__main__":
-    u = calc(5, 100)
-    print u
+    t = clock()
+    u = calc(100, 8000)
+    t = clock() - t
+    print t
