@@ -1,5 +1,6 @@
 from numpy import zeros
 from scipy import weave
+from timeit import default_timer as clock
 
 dx = 0.1
 dy = 0.1
@@ -19,3 +20,12 @@ def calc(N, Niter=100, func=py_update, args=()):
     for i in range(Niter):
         func(u,*args)
     return u
+
+if __name__ == "__main__":
+    t = clock()
+    u = calc(100, 8000)
+    t = clock() - t
+    print t
+    print u[1, 1]
+    print sum(u.flat)
+    print sum((u**2).flat)
